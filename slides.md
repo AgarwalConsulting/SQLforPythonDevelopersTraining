@@ -6,7 +6,7 @@ layout: true
 
 class: center, middle
 
-# {title}
+# SQL for Python Developers
 
 Gaurav Agarwal
 
@@ -44,7 +44,7 @@ func main() {
 class: center, middle
 
 Code
-https://github.com/base-org/presentation-template
+https://github.com/AgarwalConsulting/presentation-sql-for-python-developers
 
 Slides
-https://template.slides.base-org.com
+https://sql-for-python-developers.slides.AgarwalConsulting.com
