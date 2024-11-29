@@ -44,7 +44,7 @@ func main() {
 class: center, middle
 
 Code
-https://github.com/AgarwalConsulting/presentation-sql-for-python-developers
+https://github.com/AgarwalConsulting/SQLforPythonDevelopersTraining
 
 Slides
 https://sql-for-python-developers.slides.AgarwalConsulting.com
