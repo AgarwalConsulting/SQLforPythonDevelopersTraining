@@ -505,6 +505,32 @@ class: center, middle
 ## `Sqlalchemy` basics
 
 ---
+
+- **Core**: Provides a low-level interface for SQL execution.
+
+- **ORM**: Provides an object-oriented abstraction over the database.
+
+---
+class: center, middle
+
+### Core connection example
+
+---
+class: center, middle
+
+### Sqlalchemy ORM
+
+---
+class: center, middle
+
+#### Using built-in auto-migration support
+
+---
+class: center, middle
+
+caveats of using built-in auto-migration support!
+
+---
 class: center, middle
 
 Code

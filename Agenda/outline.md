@@ -20,9 +20,11 @@
 - Introduction to SQLAlchemy
   - Using `psycopg` as a Postgres Driver
     - Connection Pooling
+  - Using `sqlalchemy`
+    - core
+    - orm
   - Schema Management
     - Managing migration files & Schema
-  - ORM: The What? & Why?
 
 - ORM: Deep Dive (The How?)
   - Defining constraints
