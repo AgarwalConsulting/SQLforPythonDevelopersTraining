@@ -480,7 +480,12 @@ class: center, middle
 
 - Clone the repo (https://github.com/AgarwalConsulting/SQLforPythonDevelopersTraining)
 
-- `pip install -r requirements.txt`
+  - `pip install -r requirements.txt`
+
+---
+class: center, middle
+
+## `Psycopg` basics
 
 ---
 class: center, middle
