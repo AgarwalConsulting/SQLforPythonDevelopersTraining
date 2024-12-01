@@ -5,33 +5,29 @@ from user import User
 from base import DATABASE_URL
 
 def main():
-    print("Querying...")
+    print("Deleting...")
 
     engine = create_engine(DATABASE_URL)
 
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # Insert
-    new_user = User(name="Gaurav", email="algogrit@gmail.com")
-    session.add(new_user)
-
-    # Query
-    # users = session.query(User).all()
-    # for user in users:
-    #     print(user)
-
     # Delete using instance
-    # user = session.query(User).where(User.email == "algogrit@gmail.com").first()
-    # session.delete(user)
+    # user = session.query(User).where(User.email == "algogrit@gmail.com").first() ## 1.x style
 
-    # Delete Selectively
+    # users = select(User).filter_by(email="algogrit@gmail.com")
+    # delete(users)
+
+    # Delete Selectively ## 2.x style
     # stmt = delete(User).where(User.email != "algogrit@gmail.com")
     # session.execute(stmt)
 
-
     # Delete All
     # session.query(User).delete()
+
+    session.execute(
+        delete(User)
+    )
 
     # Commit session!
     session.commit()

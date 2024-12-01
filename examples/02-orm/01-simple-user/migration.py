@@ -1,4 +1,3 @@
-from query import DATABASE_URL
 from sqlalchemy import create_engine
 
 from base import Base, DATABASE_URL

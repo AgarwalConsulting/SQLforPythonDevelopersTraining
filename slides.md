@@ -523,6 +523,13 @@ class: center, middle
 ---
 class: center, middle
 
+#### Changes in 2.0
+
+.content-credits[https://docs.sqlalchemy.org/en/20/changelog/migration_20.html#migration-20-query-usage]
+
+---
+class: center, middle
+
 #### Using built-in auto-migration support
 
 ---
