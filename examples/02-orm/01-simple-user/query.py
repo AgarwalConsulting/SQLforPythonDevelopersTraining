@@ -5,6 +5,8 @@ from user import User
 from base import DATABASE_URL
 
 def main():
+    print("Querying...")
+
     engine = create_engine(DATABASE_URL)
 
     Session = sessionmaker(bind=engine)

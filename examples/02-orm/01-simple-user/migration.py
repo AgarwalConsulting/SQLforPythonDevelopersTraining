@@ -4,6 +4,7 @@ from sqlalchemy import create_engine
 from base import Base, DATABASE_URL
 
 def main():
+    print("Running migrations...")
     engine = create_engine(DATABASE_URL)
 
     Base.metadata.create_all(engine)
