@@ -490,6 +490,23 @@ class: center, middle
 ---
 class: center, middle
 
+'%s', '%b', '%t' are the only supported query parameter types
+
+---
+class: center, middle
+
+### Connection Pooling with `psycopg`
+
+.content-credits[https://www.psycopg.org/psycopg3/docs/advanced/pool.html]
+
+---
+class: center, middle
+
+## `Sqlalchemy` basics
+
+---
+class: center, middle
+
 Code
 https://github.com/AgarwalConsulting/SQLforPythonDevelopersTraining
 
