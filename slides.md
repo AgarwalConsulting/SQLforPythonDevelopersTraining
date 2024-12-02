@@ -600,11 +600,6 @@ class: center, middle
 ---
 class: center, middle
 
-## Advanced Schema Management
-
----
-class: center, middle
-
 ### Constraints, validations and events
 
 ---
@@ -641,7 +636,16 @@ class: center, middle
 - `after_delete`: Triggered after an object is deleted.
 
 ---
+class: center, middle
 
+### Default Values
+
+---
+class: center, middle
+
+## Advanced Schema Management
+
+---
 class: center, middle
 
 Code
