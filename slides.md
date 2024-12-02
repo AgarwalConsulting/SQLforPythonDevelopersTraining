@@ -540,6 +540,88 @@ caveats of using built-in auto-migration support!
 ---
 class: center, middle
 
+## Basic migrations using `alembic`
+
+.content-credits[https://alembic.sqlalchemy.org/en/latest/tutorial.html]
+
+---
+class: center, middle
+
+To get started
+
+`alembic init alembic`
+
+---
+class: center, middle
+
+To generate new migration
+
+`alembic revision [--autogenerate] -m "<migration message>"`
+
+---
+class: center, middle
+
+## ORM: Deep Dive
+
+---
+class: center, middle
+
+### Defining constraints on columns
+
+---
+class: center, middle
+
+### Defining Validations
+
+---
+class: center, middle
+
+### Events
+
+.content-credits[https://docs.sqlalchemy.org/en/20/core/event.html]
+
+---
+class: center, middle
+
+### Relationships
+
+---
+
+- One to One
+
+- One to Many
+
+- Many to Many
+
+- Self-Referential
+
+- Polymorphic
+
+---
+class: center, middle
+
+The dreaded (n+1)
+
+---
+class: center, middle
+
+#### Relationship Loading Techniques¶
+
+.content-credits[https://docs.sqlalchemy.org/en/20/orm/queryguide/relationships.html]
+
+---
+class: center, middle
+
+### Raw Queries
+
+---
+class: center, middle
+
+## Advanced Schema Management
+---
+
+class: center, middle
+
 Code
 https://github.com/AgarwalConsulting/SQLforPythonDevelopersTraining
 
