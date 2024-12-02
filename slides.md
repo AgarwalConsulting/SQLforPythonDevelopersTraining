@@ -566,23 +566,6 @@ class: center, middle
 ---
 class: center, middle
 
-### Defining constraints on columns
-
----
-class: center, middle
-
-### Defining Validations
-
----
-class: center, middle
-
-### Events
-
-.content-credits[https://docs.sqlalchemy.org/en/20/core/event.html]
-
----
-class: center, middle
-
 ### Relationships
 
 ---
@@ -605,7 +588,7 @@ The dreaded (n+1)
 ---
 class: center, middle
 
-#### Relationship Loading Techniques¶
+#### Relationship Loading Techniques
 
 .content-credits[https://docs.sqlalchemy.org/en/20/orm/queryguide/relationships.html]
 
@@ -618,6 +601,45 @@ class: center, middle
 class: center, middle
 
 ## Advanced Schema Management
+
+---
+class: center, middle
+
+### Constraints, validations and events
+
+---
+class: center, middle
+
+#### Defining constraints on columns
+
+---
+class: center, middle
+
+#### Defining Validations
+
+---
+class: center, middle
+
+#### Events
+
+.content-credits[https://docs.sqlalchemy.org/en/20/core/event.html]
+
+---
+
+#### Commonly Used Events
+
+- `before_insert`: Triggered before an object is inserted into the database.
+
+- `after_insert`: Triggered after an object is inserted.
+
+- `before_update`: Triggered before an update operation.
+
+- `after_update`: Triggered after an update operation.
+
+- `before_delete`: Triggered before an object is deleted.
+
+- `after_delete`: Triggered after an object is deleted.
+
 ---
 
 class: center, middle
