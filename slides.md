@@ -648,6 +648,161 @@ class: center, middle
 ---
 class: center, middle
 
+## Postgres Basics: Refresher
+
+---
+class: center, middle
+
+### Types
+
+.content-credits[https://www.postgresql.org/docs/current/datatype.html#DATATYPE-TABLE]
+
+---
+class: center, middle
+
+SERIAL
+
+---
+class: center, middle
+
+(Date, Time) vs Timestamp [with Timezone]
+
+---
+class: center, middle
+
+### Loading/Dumping csv data
+
+---
+class: center, middle
+
+Using `COPY` or `\COPY`
+
+---
+class: center, middle
+
+## Normalization
+
+---
+
+- 1 NF
+
+- 2 NF
+
+- 3 NF
+
+- BCNF
+
+.content-credits[https://www.simplilearn.com/tutorials/sql-tutorial/what-is-normalization-in-sql]
+
+---
+class: center, middle
+
+Let's take an employee management system as an example...
+
+---
+class: center, middle
+
+### The problems with flat tables
+
+---
+
+- *Data Redundancy*: Repeated storage of the same data increases storage needs.
+
+- *Data Integrity Issues*: Risk of inconsistencies when updating repeated data.
+
+- *Scalability Challenges*: Tables grow large quickly, impacting performance.
+
+- *Lack of Normalization*: Makes managing relationships between data entities difficult.
+
+- *Limited Query Flexibility*: Complex queries may become inefficient or convoluted.
+
+- *Maintenance Overhead*: Adding or modifying data structures is harder and error-prone.
+
+- *Poor Data Organization*: Difficult to handle hierarchical or multi-dimensional data effectively.
+
+---
+class: center, middle
+
+### When **NOT** to Normalize
+
+---
+
+- Performance is the Key Concern
+
+  - Normalization requires more joins to fetch related data, which can slow down read-heavy operations.
+
+- You Have a Read-Heavy Application
+
+  - For applications like reporting or analytics, de-normalized data reduces the need for joins, speeding up queries.
+
+- Storage is Cheap and Plentiful
+
+  - Modern storage costs are low, so eliminating redundancy may not always be worth the effort.
+
+.caveat[(1/2)]
+
+---
+
+- Your Data is Relatively Static
+
+  - If your data rarely changes, you can afford some redundancy without significant risks of anomalies.
+
+- You’re Using a NoSQL Database
+
+  - Document-based databases (e.g., MongoDB) favor denormalized structures for faster read performance and scalability.
+
+.caveat[(2/2)]
+
+---
+class: center, middle
+
+### To Normalize or not to Normalize: How to Decide?
+
+---
+
+- **Application Type**
+
+  - Transactional systems (OLTP): Normalize.
+
+  - Analytical systems (OLAP): Often de-normalize.
+
+- **Query Complexity**
+
+  - Normalize when query patterns involve fine-grained data updates or strict constraints.
+
+  - De-normalize when queries are simple but need to run fast.
+
+- **Maintainability vs. Performance**
+
+  - Normalize for long-term maintainability and data consistency.
+
+  - De-normalize for immediate performance gains in specific use cases.
+
+---
+class: center, middle
+
+![Why Not both?](assets/images/memes/why-not-both.jpg)
+
+---
+
+### Hybrid Approaches
+
+- Partially Normalize
+
+  - Normalize up to 3NF, then selectively de-normalize performance-critical parts.
+
+- Use Indexing and Materialized Views
+
+  - Optimize performance without sacrificing full normalization by creating indexes or materialized views for frequently used queries.
+
+---
+class: center, middle
+
+*Normalize for integrity, de-normalize for speed.*
+
+---
+class: center, middle
+
 Code
 https://github.com/AgarwalConsulting/SQLforPythonDevelopersTraining
 

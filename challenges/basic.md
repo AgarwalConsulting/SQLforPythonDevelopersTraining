@@ -15,7 +15,7 @@ You are tasked with designing a database for a library management system. The sy
 - Borrow Records
   - Track which members borrowed which books, along with the date of borrowing and the return date.
 
-## Design a Book Shop
+## 2. Design a Book Shop
 
 - Author (authors)
 - Book (books)
@@ -23,4 +23,4 @@ You are tasked with designing a database for a library management system. The sy
 
 & a query for:
 
-- Where the highest selling books author gets a royalty bonus!
+- where the highest selling books author gets a royalty bonus!

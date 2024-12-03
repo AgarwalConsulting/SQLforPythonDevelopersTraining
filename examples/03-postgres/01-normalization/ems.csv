@@ -1,0 +1,7 @@
+employeeid,employeename,department,projectid,projectname,projectstartdate,projectenddate,role,projectbudget,managerid,managername,officelocation,bonus,phonenumber,email
+101,Aarav Singh,Marketing,P001,Website Redesign,2024-01-01,,Lead,500000.00,201,Priya Kapoor,Mumbai,,9876543210,aarav.singh@email.com
+102,Meera Iyer,HR,,,,,,,,,Chennai,50000.00,9876543222,meera.iyer@email.com
+103,Aditya Sharma,Engineering,P002,App Development,2024-02-15,2024-06-15,Developer,1200000.00,202,Rohan Jain,Bangalore,,9876543233,aditya.sharma@email.com
+104,Kavya Nair,Sales,,,,,,,,,Delhi,30000.00,,kavya.nair@email.com
+105,Siddharth Rao,Engineering,P003,AI Research,2024-03-01,,Researcher,2000000.00,203,Anjali Das,Hyderabad,200000.00,9876543244,siddharth.rao@email.com
+106,Ishita Desai,Marketing,P004,Social Media Campaign,2024-04-01,,Manager,750000.00,204,Arjun Mehta,Mumbai,,9876543255,ishita.desai@email.com
