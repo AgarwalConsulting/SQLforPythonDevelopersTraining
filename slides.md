@@ -680,6 +680,15 @@ Using `COPY` or `\COPY`
 ---
 class: center, middle
 
+```sql
+COPY <tablename> TO '<csv_file>' WITH(FORMAT CSV, HEADER); -- Dumping
+
+COPY <tablename> FROM '<csv_file>' {DELIMITER ','} CSV HEADER; -- Loading
+```
+
+---
+class: center, middle
+
 ## Normalization
 
 ---
