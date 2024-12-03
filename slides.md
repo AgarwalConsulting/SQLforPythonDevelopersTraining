@@ -1003,6 +1003,13 @@ class: center, middle
 ---
 class: center, middle
 
+#### Using GIN Indexes
+
+.content-credits[https://www.postgresql.org/docs/current/indexes-types.html#INDEXES-TYPES-GIN]
+
+---
+class: center, middle
+
 #### Storage of JSONB (& other large objects)
 
 .content-credits[https://www.postgresql.org/docs/current/storage-toast.html]
@@ -1010,9 +1017,17 @@ class: center, middle
 ---
 class: center, middle
 
-#### Using GIN Indexes
+Typically, when the size of your column exceeds the TOAST_TUPLE_THRESHOLD (2kb default), PostgreSQL will attempt to compress the data and fit it in 2kb.
 
-.content-credits[https://www.postgresql.org/docs/current/indexes-types.html#INDEXES-TYPES-GIN]
+---
+class: center, middle
+
+If that doesn’t work, the data is moved to out-of-line storage. This is what they call “TOASTing” the data.
+
+---
+class: center, middle
+
+When the data is fetched, the reverse process of “deTOASTting” must happen.
 
 ---
 class: center, middle
@@ -1084,6 +1099,183 @@ A system must either:
 - Maintain consistency, but sacrifice availability (not all requests are responded to).
 
 - Maintain availability, but sacrifice consistency (some responses may be outdated).
+
+---
+class: center, middle
+
+## Replication vs Sharding vs Clustering
+
+---
+class: center, middle
+
+### Replication
+
+---
+class: center, middle
+
+Replication is the process of copying data from one PostgreSQL server (primary) to one or more other servers (replicas).
+
+---
+class: center, middle
+
+Replication is useful for:
+
+- Load balancing for read-heavy applications (replicas handle read operations).
+
+- High availability (replicas can take over in case the primary server fails).
+
+---
+class: center, middle
+
+[Setting up Replication](https://github.com/AgarwalConsulting/SQLforPythonDevelopersTraining/tree/master/examples/03-postgres/notes/setup-replication.md)
+
+---
+class: center, middle
+
+### Sharding
+
+---
+class: center, middle
+
+Sharding is the process of dividing data across multiple databases or servers (shards), based on a partitioning key.
+
+---
+class: center, middle
+
+Handles very large datasets and enables horizontal scaling.
+
+---
+
+Sharding is useful for:
+
+- Applications with high write or data-volume demands.
+
+- Multi-tenant systems, where each tenant's data is isolated to specific shards.
+
+- Scenarios requiring geographically distributed data storage.
+
+---
+class: center, middle
+
+[Setting up Sharding](https://github.com/AgarwalConsulting/SQLforPythonDevelopersTraining/tree/master/examples/03-postgres/notes/setup-sharding.md)
+
+---
+class: center, middle
+
+*Related*: Foreign Data Wrapper
+
+.content-credits[https://www.postgresql.org/docs/current/postgres-fdw.html]
+
+---
+class: center, middle
+
+### Clustering
+
+---
+class: center, middle
+
+Clustering involves configuring multiple PostgreSQL servers to work together as a single system.
+
+---
+
+Clustering is useful for:
+
+- Scaling both read and write operations.
+
+- Distributed databases for geographically dispersed applications.
+
+- Applications requiring parallel query execution.
+
+---
+class: center, middle
+
+Postgres natively **does not** support clustering!
+
+---
+class: center, middle
+
+[CitusData](https://www.citusdata.com/) for clustering
+
+---
+
+### Choosing the Right Approach
+
+- Use **Replication** for read-heavy workloads and high availability with simpler management.
+
+- Use **Clustering** for more complex scaling and parallel query execution requirements.
+
+- Use **Sharding** for extremely large datasets or applications needing distributed data storage.
+
+---
+class: center, middle
+
+## Locking
+
+---
+class: center, middle
+
+### Implicit Locking
+
+---
+class: center, middle
+
+In PostgreSQL, implicit locks are automatically acquired by the database system to maintain the integrity of the data and manage concurrent transactions.
+
+---
+class: center, middle
+
+These locks are generally not directly managed by the user but are handled internally by PostgreSQL as part of its transaction management system.
+
+---
+class: center, middle
+
+Implicit locks help ensure consistency and prevent conflicts in multi-user environments.
+
+---
+class: center, middle
+
+#### Types of Implicit Locks
+
+---
+
+- Row-Level Locks
+
+  - Automatically acquired during operations like `SELECT FOR UPDATE` or `SELECT FOR SHARE` to lock specific rows.
+
+- Table-Level Locks
+
+  - Acquired during table modifications (`INSERT`, `UPDATE`, `DELETE`, `ALTER TABLE`) to prevent conflicting operations.
+
+- Transaction-Level Locks
+
+  - Used in higher isolation levels like `SERIALIZABLE` to ensure consistency and prevent anomalies.
+
+- Index Locks
+
+  - Automatically applied during index creation or modifications to ensure no conflicting operations occur.
+
+.caveat[(1/2)]
+
+---
+
+- MVCC (Multi-Version Concurrency Control)
+
+  - Implicitly handles row versions during updates or deletes to maintain consistency without blocking reads.
+
+- Foreign Key Constraints
+
+  - Implicit locks are used to ensure referential integrity when modifying or deleting rows involved in foreign key relationships.
+
+- Maintenance Operations
+
+  - Commands like `VACUUM` or `CLUSTER` acquire locks to perform maintenance tasks while avoiding conflicts.
+
+.caveat[(2/2)]
+
+---
+class: center, middle
+
+### [Explicit Locking](https://www.postgresql.org/docs/current/explicit-locking.html)
 
 ---
 class: center, middle
