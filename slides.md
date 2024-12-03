@@ -1040,7 +1040,6 @@ class: center, middle
 Partitioning divides a table into smaller pieces (partitions), which can improve performance for queries and management of large datasets.
 
 ---
-class: center, middle
 
 In PostgreSQL, there are two main types of partitioning:
 
