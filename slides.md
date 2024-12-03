@@ -803,6 +803,108 @@ class: center, middle
 ---
 class: center, middle
 
+## Joins
+
+---
+class: center, middle
+
+![All Joins](assets/images/all-joins.png)
+
+.image-credits[https://medium.com/@kjavaman12/simple-introduction-of-sql-joins-b00a83ab8292]
+
+---
+class: center, middle
+
+### Usage of `IN` vs `NOT IN` clauses
+
+---
+class: center, middle
+
+#### Differences Between `IN` and `NOT IN`
+
+---
+
+##### Logic
+
+- `IN` returns rows where the value in the column matches any value in the list.
+
+- `NOT IN` returns rows where the value in the column does **not** match any value in the list.
+
+.caveat[(1/3)]
+
+---
+
+##### Performance
+
+- `IN`: Works efficiently when checking against a relatively small list of values.
+
+- `NOT IN`: May not perform as efficiently when dealing with large sets of values or NULL values. This is because `NOT IN` may involve extra checks for `NULL`.
+
+.caveat[(2/3)]
+
+---
+
+##### Handling NULLs
+
+- `IN`: If the subquery contains `NULL`, the result of `IN` can behave unpredictably (e.g., `NULL` values cause the result to be unknown or false in the query).
+
+- `NOT IN`: If any value in the list is `NULL`, the result will be `NULL` for all rows, because any comparison with `NULL` is unknown (this leads to no rows being returned unless the list is carefully handled).
+
+.caveat[(3/3)]
+
+---
+class: center, middle
+
+### Alternative with `EXISTS` or `NOT EXISTS`
+
+---
+class: center, middle
+
+If you need to handle subqueries more efficiently (especially with `NULL` values), consider using `EXISTS` or `NOT EXISTS` as an alternative to `IN` and `NOT IN`.
+
+---
+
+```sql
+SELECT name
+FROM employees e
+WHERE EXISTS (
+    SELECT 1
+    FROM departments d
+    WHERE e.department_id = d.dept_id
+    AND d.department_name = 'HR'
+);
+```
+
+---
+class: center, middle
+
+### Which JOINs to choose?
+
+---
+class: center, middle
+
+### JOIN vs UNION
+
+---
+class: center, middle
+
+![Join vs UNION](assets/images/joins-vs-union.jpg)
+
+.image-credits[https://www.youtube.com/watch?v=Yh4CrPHVBdE]
+
+---
+class: center, middle
+
+## Analyzing Performance using `EXPLAIN` or `EXPLAIN ANALYZE`
+
+---
+class: center, middle
+
+### Efficient Postgres: Tips & tricks
+
+---
+class: center, middle
+
 Code
 https://github.com/AgarwalConsulting/SQLforPythonDevelopersTraining
 
