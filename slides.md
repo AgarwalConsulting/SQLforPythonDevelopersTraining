@@ -909,7 +909,110 @@ class: center, middle
 ---
 class: center, middle
 
+## Working with indices
+
+.content-credits[https://www.postgresql.org/docs/current/indexes.html]
+
+---
+class: center, middle
+
 ### Efficient Postgres: Tips & tricks
+
+---
+
+- Indexing
+
+  - Use appropriate indexes (B-tree, GIN, GiST, etc.) for filtering and sorting.
+
+  - Avoid over-indexing to reduce storage and maintenance overhead.
+
+- Query Design
+
+  - Always specify needed columns (`SELECT col1, col2`), not `SELECT *`.
+
+  - Use `WHERE` clauses to filter data early.
+
+- Joins and Subqueries
+
+  - Optimize join order; smaller or filtered tables should come first.
+
+  - Replace correlated subqueries with joins if possible.
+
+- Query Analysis
+
+  - Use `EXPLAIN` and `EXPLAIN ANALYZE` to inspect execution plans.
+  - Identify and address slow sequential scans.
+
+.caveat[(1/3)]
+
+---
+
+- Sorting and Grouping
+
+  - Index columns frequently used for sorting or grouping.
+
+- Maintenance
+
+  - Regularly run [`VACUUM`](https://www.postgresql.org/docs/current/sql-vacuum.html) and `ANALYZE` to update statistics.
+
+  - Enable autovacuum for large, write-heavy tables.
+
+- Partitioning and Parallelism
+
+  - Partition large tables to reduce scanned data.
+
+  - Enable parallel queries for large datasets.
+
+- Avoid Redundancy
+
+  - Avoid applying functions to indexed columns in WHERE clauses. (*Eg*: date(timestamp_col))
+
+.caveat[(2/3)]
+
+---
+
+- Materialized Views
+
+  - Use materialized views for expensive, repetitive queries.
+
+- Connection Pooling
+
+  - Use a pooler like PgBouncer to manage database connections efficiently.
+
+- Performance Monitoring
+
+  - Install `pg_stat_statements` to track query performance.
+
+.caveat[(3/3)]
+
+---
+class: center, middle
+
+### Working with JSONB
+
+---
+class: center, middle
+
+`JSONB` vs `JSON`
+
+---
+class: center, middle
+
+`JSONB` vs `hstore`
+
+---
+class: center, middle
+
+#### Storage of JSONB (& other large objects)
+
+.content-credits[https://www.postgresql.org/docs/current/storage-toast.html]
+
+---
+class: center, middle
+
+#### Using GIN Indexes
+
+.content-credits[https://www.postgresql.org/docs/current/indexes-types.html#INDEXES-TYPES-GIN]
 
 ---
 class: center, middle
