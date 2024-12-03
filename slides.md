@@ -1278,10 +1278,6 @@ class: center, middle
 ### [Explicit Locking](https://www.postgresql.org/docs/current/explicit-locking.html)
 
 ---
-
-## CDC
-
----
 class: center, middle
 
 ## Operations
