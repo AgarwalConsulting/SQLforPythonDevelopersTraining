@@ -1017,6 +1017,45 @@ class: center, middle
 ---
 class: center, middle
 
+## Partitioning
+
+---
+class: center, middle
+
+Partitioning divides a table into smaller pieces (partitions), which can improve performance for queries and management of large datasets.
+
+---
+class: center, middle
+
+In PostgreSQL, there are two main types of partitioning:
+
+- range and
+
+- list
+
+---
+class: center, middle
+
+SQLAlchemy allows you to interact with partitioned tables just like any other table, but PostgreSQL automatically handles the routing of rows to the appropriate partition based on the region value.
+
+---
+class: center, middle
+
+## Windowing Functions
+
+---
+class: center, middle
+
+Windowing functions allow you to perform calculations across a set of rows related to the current row
+
+---
+class: center, middle
+
+running totals, rankings, or moving averages.
+
+---
+class: center, middle
+
 Code
 https://github.com/AgarwalConsulting/SQLforPythonDevelopersTraining
 

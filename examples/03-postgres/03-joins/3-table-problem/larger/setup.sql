@@ -6,7 +6,7 @@ CREATE TABLE Authors (
     nationality VARCHAR(50)
 );
 
--- Books Table
+-- Books Table -- 10,000
 CREATE TABLE Books (
     book_id SERIAL PRIMARY KEY,
     title VARCHAR(150),
@@ -16,6 +16,8 @@ CREATE TABLE Books (
     price DECIMAL(10, 2)
 );
 
+-- 'Fiction', 'Non-Fiction', 'Fantasy', 'Mystery'
+
 -- Sales Table
 CREATE TABLE Sales (
     sale_id SERIAL PRIMARY KEY,
@@ -24,3 +26,9 @@ CREATE TABLE Sales (
     quantity INT,
     total_price DECIMAL(10, 2)
 );
+
+
+-- CREATE INDEX ON sales(book_id);
+-- CREATE INDEX ON books(author_id);
+-- CREATE INDEX ON books(genre);
+-- CREATE INDEX ON authors(nationality);
