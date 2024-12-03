@@ -1056,6 +1056,38 @@ running totals, rankings, or moving averages.
 ---
 class: center, middle
 
+### CAP theorem
+
+defines the limitations and trade-offs in a distributed system
+
+![CAP Theorem](assets/images/cap-theorem.png)
+
+---
+
+It suggests that distributed computer systems can only deliver two out of the following three guarantees:
+
+**Consistency**: Every node sees the same data even when concurrent updates occur
+
+**Availability**: All requests receive responses on whether it was a success or a failure
+
+**Partition tolerance**: The system will keep operating even if there is a network partition in communication between different nodes
+
+---
+class: center, middle
+
+In the case of a network partition, the CAP theorem forces a trade-off between *Consistency* and *Availability*.
+
+---
+
+A system must either:
+
+- Maintain consistency, but sacrifice availability (not all requests are responded to).
+
+- Maintain availability, but sacrifice consistency (some responses may be outdated).
+
+---
+class: center, middle
+
 Code
 https://github.com/AgarwalConsulting/SQLforPythonDevelopersTraining
 
