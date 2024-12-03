@@ -1278,6 +1278,48 @@ class: center, middle
 ### [Explicit Locking](https://www.postgresql.org/docs/current/explicit-locking.html)
 
 ---
+
+## CDC
+
+---
+class: center, middle
+
+## Operations
+
+---
+class: center, middle
+
+### Backup & Restore
+
+---
+
+- [pgdump](https://www.postgresql.org/docs/current/app-pgdump.html)
+
+- [pgrestore](https://www.postgresql.org/docs/current/app-pgrestore.html)
+
+---
+class: center, middle
+
+### [VACUUM](https://www.postgresql.org/docs/current/routine-vacuuming.html)
+
+---
+class: center, middle
+
+### [Monitoring](https://www.postgresql.org/docs/current/monitoring-stats.html)
+
+---
+class: center, middle
+
+### [Postgres Internals](https://www.postgresql.org/docs/current/internals.html)
+
+---
+class: center, middle
+
+![PG arch](assets/images/PGSQL_Architecture.png)
+
+.image-credits[https://docs.hevodata.com/destinations/databases/postgresql/postgresql-data-structure/]
+
+---
 class: center, middle
 
 Code
