@@ -1115,7 +1115,6 @@ class: center, middle
 Replication is the process of copying data from one PostgreSQL server (primary) to one or more other servers (replicas).
 
 ---
-class: center, middle
 
 Replication is useful for:
 
