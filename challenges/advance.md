@@ -39,3 +39,22 @@ wc -l weather_stations.csv # 44693
 - Load the csv into postgres (note: the separator here is `;`)
 
 - Calculate the min, mean, and max temperature value per weather station
+
+## 3. Analyze & optimize an inefficient query
+
+Create tables and populate data using: `./challenges/data/user_orders.sql`
+
+```bash
+psql `<your-database>` -f ./challenges/data/user_orders.sql
+```
+
+```sql
+SELECT u.name, o.amount, p.name AS product_name, oi.quantity
+FROM users u
+JOIN orders o ON u.user_id = o.user_id
+JOIN order_items oi ON o.order_id = oi.order_id
+JOIN products p ON oi.product_id = p.product_id
+WHERE u.name = 'Alice'
+AND p.price > 100
+AND o.amount > 150;
+```
